@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.PowerDistribution.ModuleType;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.util.PIDTuner;
 import org.littletonrobotics.junction.LoggedRobot;
 import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.inputs.LoggedNetworkTables;
@@ -38,7 +37,6 @@ public class Robot extends LoggedRobot {
     setUseTiming(true);
     LoggedNetworkTables.getInstance().addTable("/SmartDashboard");
     logger.recordMetadata("Date", new SimpleDateFormat("MM-dd-yyyy_HH:mm:ss").format(new Date()));
-    logger.recordMetadata("PIDTuner", Boolean.toString(Constants.ROBOT_PID_TUNER_ENABLED));
     logger.recordMetadata("RuntimeType", getRuntimeType().toString());
     logger.recordMetadata("ProjectName", GitConstants.MAVEN_NAME);
     logger.recordMetadata("BuildDate", GitConstants.BUILD_DATE);
@@ -53,7 +51,6 @@ public class Robot extends LoggedRobot {
       LoggedSystemStats.getInstance().setPowerDistributionConfig(Constants.ROBOT_PDP_CAN, ModuleType.kRev);
     }
     if (Constants.ROBOT_LOGGING_ENABLED) logger.start();
-    PIDTuner.enable(Constants.ROBOT_PID_TUNER_ENABLED);
 
 //    setup
     robotContainer = new RobotContainer();

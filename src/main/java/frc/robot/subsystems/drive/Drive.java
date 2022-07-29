@@ -1,5 +1,6 @@
 package frc.robot.subsystems.drive;
 
+import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
@@ -41,4 +42,42 @@ public class Drive extends SubsystemBase {
 
         wheelSpeeds = new DifferentialDriveWheelSpeeds(getLeftVelocity(), getRightVelocity());
     }
+
+    public void setVolts(double left, double right) {
+    }
+
+    public void resetOdometry(Pose2d pose) {
+    }
+
+    public void resetEncoders() {
+    }
+
+//    in m/s
+    public double getLeftVelocity() {
+    }
+
+//    in m/s
+    public double getRightVelocity() {
+    }
+
+
+    public PIDController getLeftController() {
+    }
+
+    public PIDController getRightController() {
+    }
+
+    public DifferentialDriveWheelSpeeds getWheelSpeeds() {
+    }
+
+    public Pose2d getPose() {
+    }
+
+    /**
+     * Gets the current's angle
+     * @return current angle; positive = clockwise
+     */
+    public double getAngle() {
+    }
+
 }
