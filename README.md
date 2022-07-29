@@ -38,3 +38,4 @@ Our programming will be done through Java and VSCode, but if you have another ID
 5. Sign up for GitHub:
    > **NOTE:** You can use your school email, but I highly recommend you use a personal one, as your GitHub can be used later on through college and even work. 
    1. Click on [this link](https://github.com/signup) to signup
+## Actually Programming
