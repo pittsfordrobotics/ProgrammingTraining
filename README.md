@@ -1,7 +1,7 @@
 # Programming Training
 ![Five Ball Auto from 2022](media/Auto.gif)
 ## Installing Software
-Our programming will be done through Java and VSCode, but if you have another IDE you want to use, you can talk to Michael Yu on Basecamp or find him in person. Additionally, we will be using Github and Git for version control. We will also be using some tools from other teams like AdvantageScope and Pathplanner. 
+All our programming this year will be done through Java and VSCode. Additionally, we will be using Github and Git for version control. We will also be using some tools from other teams like AdvantageScope and Pathplanner. 
 1. Download [WPILib](https://github.com/wpilibsuite/allwpilib/releases/latest/):
    1. Click on the link above and scroll to the bottom of the page
    2. Click on the file that has your operating system on it (Choose Windows32 for Windows users)
