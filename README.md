@@ -41,7 +41,7 @@ All our programming this year will be done through Java and VSCode. Additionally
    1. You will probably want to store all the programming files in a folder
    2. Navigate to your desktop and create a folder called "FRC"
 6. Sign up for GitHub:
-   > **NOTE:** You can use your school email, but I highly recommend you use a personal one, as your GitHub can be used later on through college and even work. 
+   > **NOTE:** You can use your school email, but I highly recommend you use a personal one, as your GitHub can be used later on for college and even work. 
    1. Click on [this link](https://github.com/signup) to signup
 
 ## Learning the Basics
