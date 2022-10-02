@@ -109,6 +109,7 @@ There are 4 major steps in getting your code to work.
    2. Make sure the top left says ProgrammingTraining
    3. If it doesn't click `Switch Project` and choose your project directory
 3. Creating Paths
+   > **NOTE:** Path are created in meters, make sure to do your unit conversions!
    1. [Basic controls](https://github.com/mjansen4857/pathplanner/wiki/Controls-&-Shortcuts#ui-controls)
    2. These paths will automatically be imported in to your robot code
 4. Using Paths
@@ -134,3 +135,12 @@ There are 4 major steps in getting your code to work.
 
 ### Advanced Programming
 If you have finished everything above and have a working simulated auto, you can attempt to make a `DriveIOSparkMax` layer so that your auto can be run on the actual robot. All the constants you need are located in the Constants file.
+
+### Competition
+As the final piece of training we will do, we are going to have competition based on who can complete the path below the fastest.
+
+![Barrel](Challenge Paths/Barrel.jpg)
+
+[//]: # (![Salom]&#40;Challenge Paths/Salom.jpg&#41;)
+
+[//]: # (![Bounce]&#40;Challenge Paths/Bounce.jpg&#41;)
