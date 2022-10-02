@@ -20,20 +20,25 @@ import frc.robot.subsystems.drive.Drive;
 public class DrivePathing extends SequentialCommandGroup {
   public DrivePathing(Trajectory trajectory) {
     super(
-        new DriveZero(),
-        new DriveResetPose(trajectory),
+        new TimeKeeper(true), // Don't edit this
+
+        // TODO: You need to make the commands and methods labeled below
+        new DriveZero(), // Command
+        new DriveResetPose(trajectory), // Command
         new RamseteCommand(
-            trajectory,
-            Drive.getInstance()::getPose,
-            new RamseteController(),
-            new SimpleMotorFeedforward(Constants.DRIVE_STATIC_GAIN, Constants.DRIVE_VELOCITY_GAIN, Constants.DRIVE_ACCELERATION_GAIN),
-            new DifferentialDriveKinematics(Constants.DRIVE_TRACK_WIDTH_METERS),
-            Drive.getInstance()::getWheelSpeeds,
-            Drive.getInstance().getLeftPIDController(),
-            Drive.getInstance().getRightPIDController(),
-            Drive.getInstance()::setVolts,
-            Drive.getInstance()),
-        new DriveZero()
+            trajectory, // Don't touch this
+            Drive.getInstance()::getPose, // Method in Subsystem
+            new RamseteController(), // Don't touch this
+            new SimpleMotorFeedforward(Constants.DRIVE_STATIC_GAIN, Constants.DRIVE_VELOCITY_GAIN, Constants.DRIVE_ACCELERATION_GAIN), // Don't touch this
+            new DifferentialDriveKinematics(Constants.DRIVE_TRACK_WIDTH_METERS), // Don't touch this
+            Drive.getInstance()::getWheelSpeeds, // Method in Subsystem
+            Drive.getInstance().getLeftPIDController(), // Method in Subsystem
+            Drive.getInstance().getRightPIDController(), // Method in Subsystem
+            Drive.getInstance()::setVolts, // Method in Subsystem
+            Drive.getInstance()), // Don't touch this
+        new DriveZero(), // Command
+
+        new TimeKeeper(false) // Don't edit this
     );
   }
 }
