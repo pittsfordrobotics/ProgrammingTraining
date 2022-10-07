@@ -139,7 +139,7 @@ If you have finished everything above and have a working simulated auto, you can
 ### Competition
 As the final piece of training we will do, we are going to have competition based on who can complete the path below the fastest.
 
-![Barrel](Challenge Paths/Barrel.jpg)
+![Barrel](Challenge%20Paths/Barrel.jpg)
 
 [//]: # (![Salom]&#40;Challenge Paths/Salom.jpg&#41;)
 
