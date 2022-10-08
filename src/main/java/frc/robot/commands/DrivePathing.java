@@ -23,8 +23,8 @@ public class DrivePathing extends SequentialCommandGroup {
         new TimeKeeper(true), // Don't edit this
 
         // TODO: You need to make the commands and methods labeled below
-        new DriveZero(), // Command
-        new DriveResetPose(trajectory), // Command
+        new DriveZero(), // Command that sets drive voltage to 0
+        new DriveResetPose(trajectory), // Command that resets pose
         new RamseteCommand(
             trajectory, // Don't touch this
             Drive.getInstance()::getPose, // Method in Subsystem
@@ -32,11 +32,11 @@ public class DrivePathing extends SequentialCommandGroup {
             new SimpleMotorFeedforward(Constants.DRIVE_STATIC_GAIN, Constants.DRIVE_VELOCITY_GAIN, Constants.DRIVE_ACCELERATION_GAIN), // Don't touch this
             new DifferentialDriveKinematics(Constants.DRIVE_TRACK_WIDTH_METERS), // Don't touch this
             Drive.getInstance()::getWheelSpeeds, // Method in Subsystem
-            Drive.getInstance().getLeftPIDController(), // Method in Subsystem
-            Drive.getInstance().getRightPIDController(), // Method in Subsystem
+            Drive.getInstance().getLeftController(), // Method in Subsystem
+            Drive.getInstance().getRightController(), // Method in Subsystem
             Drive.getInstance()::setVolts, // Method in Subsystem
             Drive.getInstance()), // Don't touch this
-        new DriveZero(), // Command
+        new DriveZero(), // Command that sets drive voltage to 0
 
         new TimeKeeper(false) // Don't edit this
     );
