@@ -97,7 +97,7 @@ There are 4 major steps in getting your code to work.
    1. DriveResetPose - resets the robot pose and encoders
    2. DriveZero - drive at 0 volts
 3. Create paths (this is detailed in section below)
-4. Setup you auto in RobotContainer
+4. Setup your auto in RobotContainer
 
 #### Making a Trajectory with PathPlanner
 1. First Launch
