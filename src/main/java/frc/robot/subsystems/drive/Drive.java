@@ -1,13 +1,17 @@
 package frc.robot.subsystems.drive;
 
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.math.estimator.AngleStatistics;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.math.kinematics.DifferentialDriveWheelSpeeds;
+import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.subsystems.drive.DriveIO.DriveIOInputs;
+import frc.robot.util.PIDTuner;
+
 import org.littletonrobotics.junction.Logger;
 
 public class Drive extends SubsystemBase {
@@ -54,23 +58,28 @@ public class Drive extends SubsystemBase {
 
 //    in m/s
     public double getLeftVelocity() {
+        return inputs.leftVelocityMetersPerSec;
     }
-
 //    in m/s
     public double getRightVelocity() {
+        return inputs.rightVelocityMetersPerSec;
     }
 
 
     public PIDController getLeftController() {
+        return new PIDController(Constants.DRIVE_POSITION_GAIN, Constants.DRIVE_INTEGRAL_GAIN, Constants.DRIVE_DERIVATIVE_GAIN);
     }
 
     public PIDController getRightController() {
+        return new PIDController(Constants.DRIVE_POSITION_GAIN, Constants.DRIVE_INTEGRAL_GAIN, Constants.DRIVE_DERIVATIVE_GAIN);
     }
 
     public DifferentialDriveWheelSpeeds getWheelSpeeds() {
+        return wheelSpeeds;
     }
 
     public Pose2d getPose() {
+        return pose;
     }
 
     /**
@@ -78,6 +87,6 @@ public class Drive extends SubsystemBase {
      * @return current angle; positive = clockwise
      */
     public double getAngle() {
+        return -1*Units.radiansToDegrees(inputs.gyroYawPositionRad);
     }
-
 }

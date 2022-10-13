@@ -60,8 +60,8 @@ public final class Constants {
 
     public static final double DRIVE_MOI = 0.8501136363636363; // this was found in DifferentialDrivetrainSim.createKitbotSim() code
 
-    public static final double DRIVE_MAX_VELOCITY_METERS_PER_SECOND = 10;
-    public static final double DRIVE_MAX_ACCELERATION_METERS_PER_SECOND_SQUARED = 5;
+    public static final double DRIVE_MAX_VELOCITY_METERS_PER_SECOND = 10.0;
+    public static final double DRIVE_MAX_ACCELERATION_METERS_PER_SECOND_SQUARED = 5.0;
 
     static {
         if (RobotBase.isReal()) {

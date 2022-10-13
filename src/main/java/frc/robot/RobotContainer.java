@@ -8,7 +8,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
+import frc.robot.commands.DrivePathing;
 import frc.robot.util.controller.BetterXboxController;
+import frc.robot.Trajectories;
 
 public class RobotContainer {
   private final BetterXboxController driverController = new BetterXboxController(0, BetterXboxController.Hand.LEFT, BetterXboxController.Humans.DRIVER);
@@ -26,7 +28,7 @@ public class RobotContainer {
   private void autoConfig() {
     autoChooser.setDefaultOption("Nothing", new WaitCommand(0));
 //    Change this to fit your auto
-//    autoChooser.addOption("YOUR AUTO", new DrivePathing(Trajectories.FiveBallAuto));
+    autoChooser.addOption("YOUR AUTO", new DrivePathing(Trajectories.path));
 
     SmartDashboard.putData("Auto Command", autoChooser);
   }
