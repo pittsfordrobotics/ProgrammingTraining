@@ -84,7 +84,7 @@ With your basic understanding of how the code functions now, your goal is to mak
       2. Type `cd Desktop/FRC` 
    2. Windows
       1. Search for `Git Bash` and open it
-      2. Type in `cd c:\Users\YOUR_USERNAME\Desktop\FRC`
+      2. Type in `cd c:/Users/YOUR_USERNAME/Desktop/FRC`
 3. Go back to your fork on GitHub and click on the green `Code` button
 4. Click on HTTPS and then copy the text in the box
 5. Type `git clone (paste what you copied)`
@@ -97,7 +97,7 @@ There are 4 major steps in getting your code to work.
    1. DriveResetPose - resets the robot pose and encoders
    2. DriveZero - drive at 0 volts
 3. Create paths (this is detailed in section below)
-4. Setup you auto in RobotContainer
+4. Setup your auto in RobotContainer
 
 #### Making a Trajectory with PathPlanner
 1. First Launch

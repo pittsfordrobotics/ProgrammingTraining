@@ -83,7 +83,7 @@ public class Drive extends SubsystemBase {
     }
 
     /**
-     * Gets the current's angle
+     * Gets the current's angle in degrees
      * @return current angle; positive = clockwise
      */
     public double getAngle() {

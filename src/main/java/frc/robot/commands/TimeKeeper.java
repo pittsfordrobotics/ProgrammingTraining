@@ -1,11 +1,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-
 
 public class TimeKeeper extends CommandBase {
     private static final Timer timer = new Timer();
@@ -14,8 +11,6 @@ public class TimeKeeper extends CommandBase {
     /** @param start true for start; false for end */
     public TimeKeeper(boolean start) {
         this.start = start;
-        ShuffleboardTab timeTab = Shuffleboard.getTab("Time");
-        timeTab.addNumber("Auto Time", timer::get);
     }
 
     @Override
@@ -26,6 +21,8 @@ public class TimeKeeper extends CommandBase {
         }
         else {
             timer.stop();
+            SmartDashboard.putNumber("Auto Time", timer.get());
+            System.out.println(timer.get());
         }
     }
 

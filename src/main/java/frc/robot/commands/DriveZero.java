@@ -1,38 +1,65 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.drive.Drive;
 
+
 public class DriveZero extends CommandBase {
-  private final Drive drive = Drive.getInstance();
-  /** Creates a new DriveZero. */
-  public DriveZero() {
-    // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(this.drive);
-  }
+    private final Drive drive = Drive.getInstance();
 
-  // Called when the command is initially scheduled.
-  @Override
-  public void initialize() {
-    drive.setVolts(0, 0);
-  }
+    public DriveZero() {
+        // each subsystem used by the command must be passed into the
+        // addRequirements() method (which takes a vararg of Subsystem)
+        addRequirements(this.drive);
+    }
 
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  public void execute() {}
+    /**
+     * The initial subroutine of a command.  Called once when the command is initially scheduled.
+     */
+    @Override
+    public void initialize() {
 
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {}
+    }
 
-  // Returns true when the command should end.
-  @Override
-  public boolean isFinished() {
-    return false;
-  }
+    /**
+     * The main body of a command.  Called repeatedly while the command is scheduled.
+     * (That is, it is called repeatedly until {@link #isFinished()}) returns true.)
+     */
+    @Override
+    public void execute() {
+
+    }
+
+    /**
+     * <p>
+     * Returns whether this command has finished. Once a command finishes -- indicated by
+     * this method returning true -- the scheduler will call its {@link #end(boolean)} method.
+     * </p><p>
+     * Returning false will result in the command never ending automatically. It may still be
+     * cancelled manually or interrupted by another command. Hard coding this command to always
+     * return true will result in the command executing once and finishing immediately. It is
+     * recommended to use * {@link edu.wpi.first.wpilibj2.command.InstantCommand InstantCommand}
+     * for such an operation.
+     * </p>
+     *
+     * @return whether this command has finished.
+     */
+    @Override
+    public boolean isFinished() {
+        // TODO: Make this return true when this Command no longer needs to run execute()
+        return false;
+    }
+
+    /**
+     * The action to take when the command ends. Called when either the command
+     * finishes normally -- that is it is called when {@link #isFinished()} returns
+     * true -- or when  it is interrupted/canceled. This is where you may want to
+     * wrap up loose ends, like shutting off a motor that was being used in the command.
+     *
+     * @param interrupted whether the command was interrupted/canceled
+     */
+    @Override
+    public void end(boolean interrupted) {
+
+    }
 }
