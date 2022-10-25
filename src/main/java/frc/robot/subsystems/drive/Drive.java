@@ -43,38 +43,49 @@ public class Drive extends SubsystemBase {
         wheelSpeeds = new DifferentialDriveWheelSpeeds(getLeftVelocity(), getRightVelocity());
     }
 
+//    This will need to call the IO layer since we are interacting with hardware (motors)
     public void setVolts(double left, double right) {
     }
 
+//    This needs to reset the odometry with the pose that is given through the method
     public void resetOdometry(Pose2d pose) {
     }
 
+//    This will need to call the IO layer since we need to interact with the hardware (encoders)
     public void resetEncoders() {
     }
 
-//    in m/s
+//   This needs to call "inputs" since we are reading an input from the IO layer
+//   in m/s
     public double getLeftVelocity() {
     }
 
+//   This needs to call "inputs" since we are reading an input from the IO layer
 //    in m/s
     public double getRightVelocity() {
     }
 
-
+//  this will return a new PID controller with the Position Gain, Integral Gain, and Derivative Gain set through the constants file
     public PIDController getLeftController() {
     }
 
+//  this will return a new PID controller with the Position Gain, Integral Gain, and Derivative Gain set through the constants file
     public PIDController getRightController() {
     }
 
+//    Returns the local WheelSpeeds
     public DifferentialDriveWheelSpeeds getWheelSpeeds() {
     }
 
+//    Returns the locally stored pose
     public Pose2d getPose() {
     }
 
     /**
      * Gets the current's angle in degrees
+     *  To do this you will need to look up some documentation
+     *  Look up "Pigeon2 CTRE" and look for a User Manual
+     *  Our Pigeon2 is mounted flat on the bottom of the robot
      * @return current angle; positive = clockwise
      */
     public double getAngle() {

@@ -26,7 +26,8 @@ public class RobotContainer {
   private void autoConfig() {
     autoChooser.setDefaultOption("Nothing", new WaitCommand(0));
 //    Change this to fit your auto
-//    autoChooser.addOption("YOUR AUTO", new DrivePathing(Trajectories.FiveBallAuto));
+//    autoChooser.addOption("AUTO 1", new DrivePathing(Trajectories.SAMPLE_PATH1));
+//    autoChooser.addOption("AUTO 2", new DrivePathing(Trajectories.SAMPLE_PATH2));
 
     SmartDashboard.putData("Auto Command", autoChooser);
   }

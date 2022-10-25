@@ -20,11 +20,11 @@ import frc.robot.subsystems.drive.Drive;
 public class DrivePathing extends SequentialCommandGroup {
   public DrivePathing(Trajectory trajectory) {
     super(
-        new TimeKeeper(true), // Don't edit this
+        new TimeKeeper(true), // Don't touch this
 
         // TODO: You need to make the commands and methods labeled below
-        new DriveZero(), // Command that sets drive voltage to 0
-        new DriveResetPose(trajectory), // Command that resets pose
+        new DriveZero(), // Command that sets drive voltage to 0; This command is made as a sample, but you will need to fill it out
+        new DriveResetPose(trajectory), // Command that resets pose; You will need to make this command!
         new RamseteCommand(
             trajectory, // Don't touch this
             Drive.getInstance()::getPose, // Method in Subsystem
@@ -38,7 +38,7 @@ public class DrivePathing extends SequentialCommandGroup {
             Drive.getInstance()), // Don't touch this
         new DriveZero(), // Command that sets drive voltage to 0
 
-        new TimeKeeper(false) // Don't edit this
+        new TimeKeeper(false) // Don't touch this
     );
   }
 }
