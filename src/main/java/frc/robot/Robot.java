@@ -7,26 +7,21 @@ package frc.robot;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.PowerDistribution;
-import edu.wpi.first.wpilibj.PowerDistribution.ModuleType;
 import edu.wpi.first.wpilibj.RobotBase;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import org.littletonrobotics.junction.LoggedRobot;
 import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.inputs.LoggedNetworkTables;
-import org.littletonrobotics.junction.inputs.LoggedSystemStats;
-import org.littletonrobotics.junction.io.ByteLogReceiver;
 import org.littletonrobotics.junction.io.LogSocketServer;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 public class Robot extends LoggedRobot {
-  private final PowerDistribution revPDH = new PowerDistribution();
+//  private final PowerDistribution revPDH = new PowerDistribution();
 
   private Command autonomousCommand;
-
-  private ByteLogReceiver logReceiver;
 
   private RobotContainer robotContainer;
 
@@ -45,17 +40,18 @@ public class Robot extends LoggedRobot {
     logger.recordMetadata("GitBranch", GitConstants.GIT_BRANCH);
     logger.recordMetadata("GitDirty", GitConstants.DIRTY == 0 ? "Clean" : "Dirty");
     logger.addDataReceiver(new LogSocketServer(5800));
+    logger.addDataReceiver(new NT4Publisher());
     if (RobotBase.isReal()) {
-      logReceiver = new ByteLogReceiver(Constants.ROBOT_LOGGING_PATH);
-      logger.addDataReceiver(logReceiver);
-      LoggedSystemStats.getInstance().setPowerDistributionConfig(Constants.ROBOT_PDP_CAN, ModuleType.kRev);
+      logger.addDataReceiver(new WPILOGWriter(Constants.ROBOT_LOGGING_PATH));
+      LoggedPowerDistribution.getInstance();
     }
-    if (Constants.ROBOT_LOGGING_ENABLED) logger.start();
+    if (Constants.ROBOT_LOGGING_ENABLED) {
+      logger.start();
+    }
 
 //    setup
     robotContainer = new RobotContainer();
     DriverStation.silenceJoystickConnectionWarning(true);
-    revPDH.setSwitchableChannel(true);
   }
 
   @Override

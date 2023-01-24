@@ -13,7 +13,6 @@ public class TriggerButton extends Trigger {
         this.hand = hand;
     }
 
-    @Override
     public boolean get() {
         return hand == Hand.LEFT ? controller.getLeftTriggerAxis() >= 0.5 : controller.getRightTriggerAxis() >= 0.5;
     }

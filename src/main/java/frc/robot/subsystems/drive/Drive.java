@@ -14,9 +14,9 @@ public class Drive extends SubsystemBase {
     private final DriveIO io;
     private final DriveIOInputs inputs = new DriveIOInputs();
 
-    private final DifferentialDriveOdometry odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(0));
     private DifferentialDriveWheelSpeeds wheelSpeeds = new DifferentialDriveWheelSpeeds(0, 0);
     private Pose2d pose = new Pose2d(0, 0, Rotation2d.fromDegrees(getAngle()));
+    private final DifferentialDriveOdometry odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(getAngle()), inputs.leftPositionMeters, inputs.rightPositionMeters, pose);
 
     private static final Drive INSTANCE = new Drive(Constants.ROBOT_DRIVE_IO);
     public static Drive getInstance() {
